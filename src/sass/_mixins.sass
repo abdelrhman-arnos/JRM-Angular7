@@ -1,0 +1,15 @@
+$padding-array: ('.pa'), ('.pt', -top), ('.pb', -bottom), ('.pl', -left), ('.pr', -right)
+@each $label, $attr in $padding-array
+  $num: 0
+  @while $num < 51
+    #{$label}-#{$num}
+      padding#{$attr}: $num +0px !important
+    $num: $num +5
+
+$margin-array: ('.ma'), ('.mt', -top), ('.mb', -bottom), ('.ml', -left), ('.mr', -right)
+@each $label, $attr in $margin-array
+  $num: 0
+  @while $num < 51
+    #{$label}-#{$num}
+      padding#{$attr}: $num +0px !important
+    $num: $num +5
