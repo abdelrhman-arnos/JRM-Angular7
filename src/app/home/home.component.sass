@@ -1,48 +1,19 @@
 @import "../../sass/variables"
 
-#card
-  max-width: 400px
-  background-color: $light
-  display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
+.card
   padding: 4em 8em
-  *
-    font-family: Lato, Arial, sans-serif
 
-img[mat-card-image]
-  width: 100%
-  margin-top: 1em
-  margin-bottom: 2em
-  max-width: 15em
-
-button[mat-flat-button]
-  padding: .5em 4em
-  background-color: $primary
-  font-size: 1.5em
-
-mat-card-title
-  color: $accent
-  font-size: 1.5em
-  margin-bottom: 1.5em
-
-.container
-  display: flex
-  justify-content: center
-  align-items: center
-  height: 100%
-  &:before
-    content: ""
-    position: fixed
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    z-index: -1
-    padding-top: .1px
-    background: $primary
-    background: -moz-linear-gradient(top, $primary 0%, $accent 100%)
-    background: -webkit-linear-gradient(top, $primary 0%, $accent 100%)
-    background: linear-gradient(to bottom, $primary 0%, $accent 100%)
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$primary, endColorstr=$accent, GradientType=0)
+.container:before
+  content: ""
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: -1
+  padding-top: .1px
+  background: $primary
+  background: -moz-linear-gradient(top, $primary 0%, $accent 100%)
+  background: -webkit-linear-gradient(top, $primary 0%, $accent 100%)
+  background: linear-gradient(to bottom, $primary 0%, $accent 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$primary, endColorstr=$accent, GradientType=0)

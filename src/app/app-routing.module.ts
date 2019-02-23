@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {ListingComponent} from './listing/listing.component';
+import {TicketComponent} from './ticket/ticket.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
     path: 'listing',
     component: ListingComponent,
     data: {title: 'ORCA TECH | Listing'}
+  },
+  {
+    path: 'create-ticket',
+    component: TicketComponent,
+    data: {title: 'ORCA TECH | Create a ticket'}
   },
 ];
 
