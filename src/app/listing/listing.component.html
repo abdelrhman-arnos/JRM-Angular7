@@ -1,3 +1,82 @@
-<p>
-  listing works!
-</p>
+<div id="header">
+  <div class="py-3 px-4 d-flex justify-content-between align-items-center">
+    <a routerLink="/">
+      <img src="../../assets/img/Orca-Logo-Header.png" alt="Orca-Logo"/>
+    </a>
+    <img src="../../assets/img/User-Icon.png" width="30" alt="User-Icon"/>
+  </div>
+  <div id="header__sub" class="py-3 px-4 d-flex justify-content-between align-items-center">
+    <div>
+      <img src="../../assets/img/Listing-Icon.png" class="mr-3" alt="Listing-Icon"/>
+      <p class="d-inline h4 text-accent">Listing</p>
+    </div>
+    <button routerLink="/create-ticket" class="btn btn-outline-primary">Create a Ticket</button>
+  </div>
+</div>
+<div class="container-fluid px-lg-4 mt-5">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <h4 class="text-primary">Filter</h4>
+      <p>No of Pages: 26 | Total count of records: 2000</p>
+    </div>
+    <form class="col-lg-4">
+      <div class="form-group">
+        <label for="typeInput">Type</label>
+        <input type="text" class="form-control" id="typeInput">
+      </div>
+      <div class="form-group">
+        <label for="governorateInput">Governorate</label>
+        <input type="text" class="form-control" id="governorateInput">
+      </div>
+      <div class="form-group">
+        <label for="cityInput">City</label>
+        <input type="text" class="form-control" id="cityInput">
+      </div>
+      <div class="form-group">
+        <label for="dateInput">Date</label>
+        <input type="date" class="form-control" id="dateInput">
+      </div>
+      <div class="form-group">
+        <label for="timeInput">Time</label>
+        <input type="time" class="form-control" id="timeInput">
+      </div>
+      <div class="my-4">
+        <button type="submit" class="btn px-4 btn-primary mr-3">Search</button>
+        <button type="reset" class="btn px-4 btn-outline-primary">Clear Filter</button>
+      </div>
+      <div class="form-group">
+        <label for="sortInput">Sort</label>
+        <input type="text" class="form-control" id="sortInput">
+      </div>
+    </form>
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="text-primary mr-3">Ticket No. 14268</span>
+            <span class="text-accent">Fire</span>
+          </h5>
+          <p class="card-text">
+            Cairo-Nasr city
+          </p>
+          <div class="card-actions d-flex justify-content-between">
+            <div class="d-flex">
+              <div class="d-flex align-items-center mr-3">
+                <img src="../../assets/img/Date-Listing.png" width="20" class="mr-2" alt="Date-Listing"/>
+                <h6 class="text-accent d-inline mb-0">6/2/2019</h6>
+              </div>
+              <div class="d-flex align-items-center mr-3">
+                <img src="../../assets/img/Timer-Icon.png" width="20" class="mr-2" alt="Timer-Icon"/>
+                <h6 class="text-accent d-inline mb-0">10:30 am</h6>
+              </div>
+            </div>
+            <div>
+              <img src="../../assets/img/Edit-button.png" width="35" class="mr-3 cursor-pointer" alt="Edit-button">
+              <img src="../../assets/img/Delete-Button.png" width="35" class="cursor-pointer" alt="Edit-button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
