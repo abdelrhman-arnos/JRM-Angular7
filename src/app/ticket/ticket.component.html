@@ -38,31 +38,62 @@
 </div>
 
 <div class="container mt-5">
-  <form class="row">
+  <form class="row" [formGroup]="ticketForm" (submit)="onSubmit()">
     <div class="form-group col-lg-6">
       <label for="nameInput">Name</label>
-      <input type="text" class="form-control" id="nameInput">
+      <input type="text"
+             required
+             class="form-control"
+             id="nameInput"
+             formControlName="name"
+             [ngClass]="{'is-invalid': ticketForm.controls.name.touched && ticketForm.controls.name.errors}"/>
+      <div class="invalid-feedback">Please enter a ticket name.</div>
     </div>
     <div class="form-group col-lg-6">
       <label for="typeInput">Type</label>
-      <input type="text" class="form-control" id="typeInput">
+      <input type="text"
+             required
+             class="form-control"
+             id="typeInput"
+             formControlName="type"
+             [ngClass]="{'is-invalid': ticketForm.controls.type.touched && ticketForm.controls.type.errors}"/>
+      <div class="invalid-feedback">Please enter a type.</div>
     </div>
     <div class="form-group col-lg-6">
       <label for="governorateInput">Governorate</label>
-      <input type="text" class="form-control" id="governorateInput">
+      <input type="text"
+             required
+             class="form-control"
+             id="governorateInput"
+             formControlName="governorate"
+             [ngClass]="{'is-invalid': ticketForm.controls.governorate.touched && ticketForm.controls.governorate.errors}"/>
+      <div class="invalid-feedback">Please enter a type.</div>
     </div>
     <div class="form-group col-lg-6">
       <label for="cityInput">City</label>
-      <select class="form-control" id="cityInput">
+      <select required
+              class="form-control"
+              id="cityInput"
+              formControlName="city"
+              [ngClass]="{'is-invalid': ticketForm.controls.city.touched && ticketForm.controls.city.errors}">
         <option *ngFor="let country of countries.default;" [value]="country['code']">{{country['name']}}</option>
       </select>
+      <div class="invalid-feedback">Please choose a country.</div>
     </div>
     <div class="form-group col-12">
       <label for="detailsInput">Details</label>
-      <textarea class="form-control" id="detailsInput" cols="15" rows="5"></textarea>
+      <textarea required
+                class="form-control"
+                id="detailsInput"
+                cols="15"
+                rows="5"
+                formControlName="details"
+                [ngClass]="{'is-invalid': ticketForm.controls.details.touched && ticketForm.controls.details.errors}">
+      </textarea>
+      <div class="invalid-feedback">Please enter details.</div>
     </div>
     <div class="mt-3 ml-auto mr-3">
-      <button type="submit" class="btn px-4 btn-primary mr-3">Save</button>
+      <button type="submit" class="btn px-4 btn-primary mr-3" [disabled]="!ticketForm.valid">Save</button>
       <button routerLink="/listing" type="reset" class="btn px-4 btn-outline-primary">Cancel</button>
     </div>
   </form>
