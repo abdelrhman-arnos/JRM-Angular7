@@ -19,26 +19,28 @@
       <h4 class="text-primary">Filter</h4>
       <p>No of Pages: 26 | Total count of records: 2000</p>
     </div>
-    <form class="col-lg-4">
+    <form class="col-lg-4" [formGroup]="filterForm" (submit)="onSubmit()">
       <div class="form-group">
         <label for="typeInput">Type</label>
-        <input type="text" class="form-control" id="typeInput">
+        <input type="text" class="form-control" id="typeInput" formControlName="type">
       </div>
       <div class="form-group">
         <label for="governorateInput">Governorate</label>
-        <input type="text" class="form-control" id="governorateInput">
+        <input type="text" class="form-control" id="governorateInput" formControlName="governorate"/>
       </div>
       <div class="form-group">
         <label for="cityInput">City</label>
-        <input type="text" class="form-control" id="cityInput">
+        <select class="form-control" id="cityInput" formControlName="city">
+          <option *ngFor="let country of countries.default;" [value]="country['code']">{{country['name']}}</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="dateInput">Date</label>
-        <input type="date" class="form-control" id="dateInput">
+        <input type="date" class="form-control" id="dateInput" formControlName="date"/>
       </div>
       <div class="form-group">
         <label for="timeInput">Time</label>
-        <input type="time" class="form-control" id="timeInput">
+        <input type="time" class="form-control" id="timeInput" formControlName="time"/>
       </div>
       <div class="my-4">
         <button type="submit" class="btn px-4 btn-primary mr-3">Search</button>
@@ -46,7 +48,7 @@
       </div>
       <div class="form-group">
         <label for="sortInput">Sort</label>
-        <input type="text" class="form-control" id="sortInput">
+        <input type="text" class="form-control" id="sortInput"/>
       </div>
     </form>
     <div class="col-lg-8">
