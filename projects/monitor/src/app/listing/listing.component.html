@@ -1,0 +1,86 @@
+<app-header [id]="30" [date]="date" title="Listing" icon="Listing-Icon.png" [hiddenInfo]="true"></app-header>
+
+<div class="container-fluid px-lg-4 mt-5">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <h4 class="text-primary">Filter</h4>
+      <p>No of Pages: 26 | Total count of records: 2000</p>
+    </div>
+    <form class="col-lg-4" [formGroup]="filterForm" (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="typeInput">Type</label>
+        <input type="text" class="form-control" id="typeInput" formControlName="type">
+      </div>
+      <div class="form-group">
+        <label for="governorateInput">Governorate</label>
+        <select class="form-control text-capitalize"
+                id="governorateInput"
+                formControlName="governorate"
+                (change)="setCities()">
+          <option *ngFor="let item of egList.default;"
+                  [value]="item.id"
+                  class="text-capitalize">
+            {{item.url}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cityInput">City</label>
+        <select class="form-control text-capitalize"
+                id="cityInput"
+                formControlName="city">
+          <option *ngFor="let item of subRegions;"
+                  [value]="item.id"
+                  class="text-capitalize">
+            {{item.url}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dateInput">Date</label>
+        <input type="date" class="form-control" id="dateInput" formControlName="date"/>
+      </div>
+      <div class="form-group">
+        <label for="timeInput">Time</label>
+        <input type="time" class="form-control" id="timeInput" formControlName="time"/>
+      </div>
+      <div class="my-4">
+        <button type="submit" class="btn px-4 btn-primary mr-3">Search</button>
+        <button type="reset" class="btn px-4 btn-outline-primary">Clear Filter</button>
+      </div>
+      <div class="form-group">
+        <label for="sortInput">Sort</label>
+        <input type="text" class="form-control" id="sortInput"/>
+      </div>
+    </form>
+    <div class="col-lg-6 offset-lg-1" id="listing">
+      <div class="card mb-3" *ngFor="let ticket of tickets;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="text-primary mr-3">Ticket No. {{ticket.id}}</span>
+            <span class="text-accent">{{ticket.type}}</span>
+          </h5>
+          <p class="card-text">{{ticket.governorate}} - {{ticket.city}}</p>
+          <div class="card-actions d-flex justify-content-between">
+            <div class="d-flex">
+              <div class="d-flex align-items-center mr-3">
+                <img src="../../assets/img/Date-Listing.png" width="20" class="mr-2" alt="Date-Listing"/>
+                <h6 class="text-accent d-inline mb-0">{{ticket.date}}</h6>
+              </div>
+              <div class="d-flex align-items-center mr-3">
+                <img src="../../assets/img/Timer-Icon.png" width="20" class="mr-2" alt="Timer-Icon"/>
+                <h6 class="text-accent d-inline mb-0">{{ticket.time}}</h6>
+              </div>
+            </div>
+            <div>
+              <a routerLink='/ticket/{{ticket.id}}'>
+                <img src="../../assets/img/Edit-button.png" width="35" class="mr-3" alt="Edit-button">
+              </a>
+              <img src="../../assets/img/Delete-Button.png" width="35" class="cursor-pointer" alt="Edit-button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
