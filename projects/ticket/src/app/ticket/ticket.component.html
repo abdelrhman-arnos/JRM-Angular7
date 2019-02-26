@@ -1,16 +1,19 @@
-<app-header [id]="30" [date]="date" title="Ticket Details" icon="Ticket-Details-Icon.png"></app-header>
+<app-header [id]="30"
+            [date]="date"
+            title="Ticket Details"
+            type="create"></app-header>
 
 <div id="timer" class="d-flex justify-content-end align-items-center ml-auto px-4">
   <h4 class="text-primary d-inline-block mb-0 mr-2" *ngIf="counter.stoped">{{sec5}}</h4>
   <div id="timer__container" class="d-flex justify-content-end align-items-center">
     <div id="timer__counter" class="d-inline-flex justify-content-center align-items-center mx-3">
-      <img src="../../../../../assets/img/Timer-Icon.png" width="25" class="mr-2" alt="Timer-Icon">
+      <img [src]="timerIcon" width="25" class="mr-2" alt="Timer-Icon">
       <countdown [config]="{leftTime: 3600, template: '$!h!:$!m!:$!s!'}"></countdown>
     </div>
     <div id="timer__stop"
          class="cursor-pointer p-3 background-accent"
          (click)="stopCounter()">
-      <img src="../../../../../assets/img/Stop-Timer.png" width="15" alt="Stop-Timer">
+      <img [src]="stopTimerIcon" width="15" alt="Stop-Timer">
     </div>
   </div>
 </div>

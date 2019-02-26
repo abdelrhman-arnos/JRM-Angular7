@@ -1,3 +1,5 @@
+declare function require(path: string);
+
 import {Component} from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import * as egList from 'src/assets/eg.json';
@@ -11,6 +13,10 @@ import * as egList from 'src/assets/eg.json';
 export class ListingComponent {
   egList: any;
   subRegions: any;
+  dateIcon: string = require('src/assets/img/Date-Listing.png');
+  timerIcon: string = require('src/assets/img/Timer-Icon.png');
+  editIcon: string = require('src/assets/img/Edit-button.png');
+  deleteIcon: string = require('src/assets/img/Delete-Button.png');
   filterForm = new FormGroup({
     type: new FormControl(''),
     governorate: new FormControl(''),

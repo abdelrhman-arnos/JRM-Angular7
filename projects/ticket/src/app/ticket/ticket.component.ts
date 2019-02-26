@@ -1,9 +1,10 @@
+declare function require(path: string);
+
 import {Component, ViewChild} from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 import * as egList from 'src/assets/eg.json';
 import {CountdownComponent} from 'ngx-countdown';
-
 
 @Component({
   selector: 'app-ticket',
@@ -17,6 +18,8 @@ export class TicketComponent {
   date: any;
   egList: any;
   subRegions: any;
+  timerIcon: string = require('src/assets/img/Timer-Icon.png');
+  stopTimerIcon: string = require('src/assets/img/Stop-Timer.png');
   ticketForm = new FormGroup({
     name: new FormControl(''),
     type: new FormControl(''),

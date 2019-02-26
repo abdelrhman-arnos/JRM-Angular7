@@ -1,23 +1,23 @@
 <div id="header">
   <div class="py-3 px-4 d-flex justify-content-between align-items-center">
     <a routerLink="/">
-      <img src="../../../assets/img/Orca-Logo-Header.png" alt="Orca-Logo"/>
+      <img [src]="orcaLogo" alt="Orca-Logo"/>
     </a>
-    <img src="../../../assets/img/User-Icon.png" width="30" alt="User-Icon"/>
+    <img [src]="userIcon" width="30" alt="User-Icon"/>
   </div>
   <div id="header__sub" class="py-3 px-4 d-flex justify-content-between align-items-center">
     <div>
-      <img src="../../../assets/img/{{icon}}" class="mr-3" alt="Ticket-Details-Icon"/>
+      <img [src]="headerIcon" class="mr-3" [alt]="title+'-icon'"/>
       <p class="d-inline h4 text-accent">{{title}}</p>
     </div>
     <p class="text-primary mb-0" *ngIf="!hiddenInfo">Ticket No. {{id}}</p>
     <div class="d-flex" *ngIf="!hiddenInfo">
       <div class="d-flex align-items-center mr-3">
-        <img src="../../../assets/img/Date-Listing.png" width="15" class="mr-2" alt="Date-Listing"/>
+        <img [src]="dateIcon" width="15" class="mr-2" alt="Date-Listing"/>
         <span class="text-accent d-inline mb-0">{{utils.formatDate(date)}}</span>
       </div>
       <div class="d-flex align-items-center mr-3">
-        <img src="../../../assets/img/Time-Icon.png" width="15" class="mr-2" alt="Time-Icon"/>
+        <img [src]="timeIcon" width="15" class="mr-2" alt="Time-Icon"/>
         <span class="text-accent d-inline mb-0">{{utils.formatTime(date)}}</span>
       </div>
     </div>

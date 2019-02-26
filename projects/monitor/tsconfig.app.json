@@ -3,7 +3,10 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
     "types": [],
-    "baseUrl": "../../../../"
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["../../src/*"]
+    }
   },
   "exclude": [
     "test.ts",

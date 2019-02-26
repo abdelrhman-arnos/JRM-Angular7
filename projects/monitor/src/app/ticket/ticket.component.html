@@ -1,4 +1,7 @@
-<app-header [id]="30" [date]="date" title="Edit Details" icon="Edit-Details-Icon.png"></app-header>
+<app-header [id]="30"
+            [date]="date"
+            title="Edit Details"
+            type="edit"></app-header>
 
 <div class="container mt-5">
   <form class="row" [formGroup]="ticketForm" (submit)="onSubmit()">

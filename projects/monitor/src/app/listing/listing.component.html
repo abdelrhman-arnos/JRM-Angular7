@@ -1,4 +1,8 @@
-<app-header [id]="30" [date]="date" title="Listing" icon="Listing-Icon.png" [hiddenInfo]="true"></app-header>
+<app-header [id]="30"
+            [date]="date"
+            title="Listing"
+            type="listing"
+            [hiddenInfo]="true"></app-header>
 
 <div class="container-fluid px-lg-4 mt-5">
   <div class="row">
@@ -64,19 +68,19 @@
           <div class="card-actions d-flex justify-content-between">
             <div class="d-flex">
               <div class="d-flex align-items-center mr-3">
-                <img src="../../assets/img/Date-Listing.png" width="20" class="mr-2" alt="Date-Listing"/>
+                <img [src]="dateIcon" width="20" class="mr-2" alt="Date-Listing"/>
                 <h6 class="text-accent d-inline mb-0">{{ticket.date}}</h6>
               </div>
               <div class="d-flex align-items-center mr-3">
-                <img src="../../assets/img/Timer-Icon.png" width="20" class="mr-2" alt="Timer-Icon"/>
+                <img [src]="timerIcon" width="20" class="mr-2" alt="Timer-Icon"/>
                 <h6 class="text-accent d-inline mb-0">{{ticket.time}}</h6>
               </div>
             </div>
             <div>
               <a routerLink='/ticket/{{ticket.id}}'>
-                <img src="../../assets/img/Edit-button.png" width="35" class="mr-3" alt="Edit-button">
+                <img [src]="editIcon" width="35" class="mr-3" alt="Edit-button">
               </a>
-              <img src="../../assets/img/Delete-Button.png" width="35" class="cursor-pointer" alt="Edit-button">
+              <img [src]="deleteIcon" width="35" class="cursor-pointer" alt="Edit-button">
             </div>
           </div>
         </div>
