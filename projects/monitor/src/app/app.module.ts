@@ -5,8 +5,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ListingComponent} from './listing/listing.component';
 import {HomeComponent} from './home/home.component';
-import { TicketComponent } from './ticket/ticket.component';
+import {TicketComponent} from './ticket/ticket.component';
 import {HeaderModule} from 'src/app/modules/header/header.module';
+import {LandingModule} from 'src/app/modules/landing/landing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HeaderModule} from 'src/app/modules/header/header.module';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HeaderModule
+    HeaderModule,
+    LandingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
